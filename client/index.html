@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo-black.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RegEx Generator</title>
+  </head>
+  <body>
+    <div id="app">
+      <div>
+        <a href="https://github.com" target="_blank">
+        <picture>
+          <source srcset="/logo-black.webp" media="(prefers-color-scheme: dark)" />
+          <img src="/logo.webp" class="logo vanilla" alt="regexGen logo" />
+        </picture>
+        </a>
+        <h1>Regular Expression (RegEx) Generator</h1>
+        <div class="card">
+          <div>
+            <p>Input a pattern that the regex should follow</p>
+            <p>Notice: This generator uses AI to produce a result.</p>
+          </div>
+          <form id="formy">
+            <div>
+              <input type="text" name="inputPrompt">
+            </div>
+            <div>
+              <button type="submit">Generate</button>
+            </div>
+          </form>
+          <h2 id="">Output:</h2>
+          <p id="generatedExpression"></p>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
