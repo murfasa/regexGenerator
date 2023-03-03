@@ -30,5 +30,8 @@ jobs:
         cache: 'npm'
         cache-dependency-path: client/package-lock.json
     - run: npm ci
+      working-directory: './server'
     - run: npm run build --if-present
+      working-directory: './server'
     - run: npm test
+      working-directory: './server'
