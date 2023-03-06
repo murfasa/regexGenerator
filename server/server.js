@@ -29,18 +29,23 @@ app.post('/', async(req, res) => {
     const prompt = req.body.prompt;
     console.log(prompt);
 
-    const response = await openai.createCompletion({
-      model: 'text-davinci-003',
-      prompt: `${prompt}`,
+    const response = await openai.createChatCompletion({
+      model: 'gpt-3.5-turbo',
+      messages: [
+        {role: "system", content: "You are a helpful regular expression generator."},
+        {role: "system", content: "Only respond with a regular expression. Do not include extra words."},
+        {role: "user", content: `${prompt}`}
+      ],
       temperature: 0,
-      max_tokens: 3000,
+      max_tokens: 2000,
       top_p : 1,
-      frequency_penalty: 0.5,
+      frequency_penalty: 0,
       presence_penalty: 0,
     })
 
     res.status(200).send({
-      bot: response.data.choices[0].text
+      bot: response.data.choices[0].message.content,
+      choices: response.data.choices
     })
 
   } catch (error) {

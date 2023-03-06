@@ -37,6 +37,7 @@ const handleSubmit = async (e) => {
   if (response.ok) {
     const data = await response.json();
     const parsedData = data.bot.trim();
+    console.log(data.choices);
     //console.log(parsedData)
 
     output.innerHTML = parsedData;
@@ -44,7 +45,7 @@ const handleSubmit = async (e) => {
     const err = await response.text();
 
     output.innerHTML = "Something went wrong!";
-    alert(err);
+    console.log(err);
   }
 }
 
