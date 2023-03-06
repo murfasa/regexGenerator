@@ -39,8 +39,8 @@ body {
 }
 
 a {
-  font-weight: 500;
-  color: #646cff;
+  font-weight: bold;
+  color: #55B7F7;
   text-decoration: inherit;
 }
 
@@ -76,6 +76,9 @@ input {
   :root {
     color: #374151;
     background-color: #DEDEDE;
+  }
+  a {
+    color: #033FA0;
   }
   a:hover {
     color: #374151;
